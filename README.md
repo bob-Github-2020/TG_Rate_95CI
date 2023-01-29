@@ -53,19 +53,20 @@ PSMSL fills the data gap as -99999. These gap lines need to be removed before in
  
         sed -e '/-99999/d' -i 828.rlrdata 
 
-I wrote a Bash script, "do_remove_PSMSL_gap_lines", for doing the pre-process, including remove gap lines, exclude datasets shorter than 20 years and with gaps over half of the year range.
+I wrote a Bash script, "do_PSMSL_Pre_Process.sh", for doing the pre-process, removing gap lines, excluding datasets shorter than 20 years or with gaps over half of the year range.
 
      #!/bin/bash
      #12-27-2022, by Bob Wang
-     #* Pre-process PEMSL data: (1) remove 99999 (gap lines), (2) remove dataset less than 20 years, or have data gaps over half of the time span. 
+     #* Pre-process PEMSL data: (1) remove -99999 lines (gap lines), 
+     #  (2) remove dataset less than 20 years, or have data gaps over half of the time span. 
 
      for file in *.rlrdata;
        do
        echo $file
-     ## Remove "-99999" lines, lines with no measure
+     ## Remove "-99999" lines, lines with no measures
        sed -e '/-99999/d' -i $file 
    
-     ## Idenfiy stations less than 20 years, gaps > half 
+     ## Idenfiy stations less than 20 years, gaps > half year range 
 
      # total lines, measures
        lines=$(wc -l < $file);
@@ -91,13 +92,11 @@ I wrote a Bash script, "do_remove_PSMSL_gap_lines", for doing the pre-process, i
        file_size=$(du -b $file | awk '{print $1}');
        echo $file_size
 
-     #  remove stations spanning less than 20 years
-     #  or with over half-missing, 2*nlines < T*12
+     #  remove stations spanning less than 20 years or with over half-missing, 2*nlines < T*12
 
       if [ $IT -le 20 -o $nl -le $npts ]; then
         echo $T
-        echo "Deleting empty file $file with time span $T";
-        echo $file
+        echo "Deleting file:" $file
         rm $file
       fi;
      done
@@ -109,7 +108,7 @@ You may need to install several Python standard modules on your computer if you 
 
      pip install module-name
  
-For installing the LATEST pyts module for using the SSA module, carefully read the following website.
+For installing the LATEST pyts module for using the SSA module, please carefully read the following website.
 
     https://pyts.readthedocs.io/en/latest/install.html
     
@@ -153,7 +152,7 @@ If the system still can not find the standard Python module after "pip install m
 
 # For NOAA data users
 
-The Main program "Main_cal_TG_Rate_95CI.py" is designed for reading PSMSL data. NOAA data is organized in a slight different way (e.g., 9457292_meantrend.txt). The unit of MSL is meters.
+The Main program "Main_cal_TG_Rate_95CI.py" is designed for reading PSMSL data. NOAA data is organized in a slight different way (e.g., 9457292_meantrend.txt). The unit of MSL is in meters.
    
     Year   Month    Monthly_MSL       
     1949   9        -0.622                                                           
@@ -161,7 +160,7 @@ The Main program "Main_cal_TG_Rate_95CI.py" is designed for reading PSMSL data. 
     1949   11       -0.568                                                           
     1949   12       -0.804 
 
-If you are working on NOAA data, please use the following Python program:
+If you are working on NOAA data, please use the following Python program for calling the module, TG_Rate_95CI.py:
 
      #! /usr/bin/python3
      ## for reading NOAA MSL data and calling "TG_Rate_95CI.py"
@@ -198,6 +197,7 @@ If you are working on NOAA data, please use the following Python program:
 
 Some example figures for the Galveston Pleasure Pier TG (PSMSL ID: 828) output from the Python Module:
 
-![828_ACF](https://user-images.githubusercontent.com/65426380/215299095-5fc5fad6-4c80-44b3-acf3-d488bdbaf9ea.png)
-![828_SSA](https://user-images.githubusercontent.com/65426380/215297920-23bcb64c-5c1f-47f1-9f90-9e6b21287cb5.png)
-![828_Decomposition](https://user-images.githubusercontent.com/65426380/215297927-fe6a8aaa-1c36-46ac-a1e4-088ebfdc0619.png)
+![828_ACF](https://user-images.githubusercontent.com/65426380/215344521-fa8f2041-255a-4e4a-888a-d75ad069e869.png)
+![828_SSA](https://user-images.githubusercontent.com/65426380/215344556-f8960f17-214a-4f86-a8a0-f42d44d55ac4.png)
+![828_Decomposition](https://user-images.githubusercontent.com/65426380/215344568-90f68bdb-2b39-46e6-9349-5d1af790b1c5.png)
+
