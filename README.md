@@ -3,18 +3,21 @@
 Last updated: 1-27-2023, by Guoquan (Bob) Wang.
 
 The detailed methodology for calculating the 95%CI is adressed in:
+
 Wang, G. (2023). A methodoly for calculating the 95% confidence interval of the mean sea-level rate derived from tide gauge data, submitted xxx (02/03/2023)
 
-## You may install the module on your computer by: pip install TG_Rate_95CI
+You may install the module on your computer by: pip install TG_Rate_95CI
        # https://pypi.org/project/TG_Rate_95%CI/ 
-  # or download the source code (TG_Rate_95CI.py) to your working directory
+       
+or download the source code (TG_Rate_95CI.py) to your working directory
        # https://github.com/bob-Github-2020/TG_Rate_95CI
 
 ## To Test the module:
-# Copy Main_cal_TG_Rate_95CI.py, TG_Rate_95CI.py,and the sample PSMSL data (e.g., 828.rlrdata) to your working directory.
-# For running the program:
-# type "./Main_cal_TG_Rate_95CI.py"  in a Linux terminal,
-# or type "python Main_cal_TG_Rate_95CI.py" or "py Main_cal_TG_Rate_95CI.py"  in a Windows CMD terminal. 
+
+Copy Main_cal_TG_Rate_95CI.py, TG_Rate_95CI.py,and the sample PSMSL data (e.g., 828.rlrdata) to your working directory.
+
+type "./Main_cal_TG_Rate_95CI.py"  in a Linux terminal,
+or type "python Main_cal_TG_Rate_95CI.py" or "py Main_cal_TG_Rate_95CI.py"  in a Windows CMD terminal. 
 
 ## Important notes
 # The PSMSL dataset ('fin'): *.rlrdata is organized as the following, the unit of MSL is mm
