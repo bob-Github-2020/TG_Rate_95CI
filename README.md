@@ -79,24 +79,21 @@ You can get the LATEST version of pyts by cloning the Github repository:
           
           py -m pip install .
 
-## I wish a good luck for Windows users! 
 
-## feel free to contact me by gwang@uh.edu.
+# For NOAA data users
 
-## The Main program "Main_cal_TG_Rate_95CI.py" is designed for reading PSMSL data. NOAA data is organized in a slight different way:
-## NOAA data, 9457292_meantrend.txt   
-    # Year   Month    Monthly_MSL       
-    # 1949   9        -0.622                                                           
-    # 1949   10       -0.663                                                           
-    # 1949   11       -0.568                                                           
-    # 1949   12       -0.804 
+The Main program "Main_cal_TG_Rate_95CI.py" is designed for reading PSMSL data. NOAA data is organized in a slight different way (e.g., 9457292_meantrend.txt):
+   
+    Year   Month    Monthly_MSL       
+    1949   9        -0.622                                                           
+    1949   10       -0.663                                                           
+    1949   11       -0.568                                                           
+    1949   12       -0.804 
 
-If you are working on NOAA data, please use the following sentences:
+If you are working on NOAA data, please use the following Python program:
 
-##******************For Reading NOAA data***************************************
-                                                        
-## for inputting NOAA data, you may use the following sentences
      #! /usr/bin/python3
+     ## for reading NOAA MSL data and calling "TG_Rate_95CI.py"
      import os
      import pandas as pd
      from TG_Rate_95CI import cal_95CI
@@ -124,6 +121,7 @@ If you are working on NOAA data, please use the following sentences:
             else:
               pass
 
+## I wish a good luck for Windows users! 
 
 Some example figures for the Galveston Pleasure Pier TG (PSMSL ID: 828) output from the Python Module:
 
