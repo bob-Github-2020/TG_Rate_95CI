@@ -1,6 +1,8 @@
 ## Rread Me for running TG_Rate_95CI.py
 
-Last updated: 1-28-2023, by Guoquan (Bob) Wang.  bob.g.wang@gmail.com
+Last updated: 1-28-2023, by Guoquan (Bob) Wang.  
+
+Feel free to contact me by: bob.g.wang@gmail.com
 
 ## Main function
 
@@ -14,7 +16,7 @@ You may install the module on your computer by:
 
        pip install TG_Rate_95CI
 
-Please read
+Please visit the PyPi site:
 
       https://pypi.org/project/TG_Rate_95%CI
        
@@ -38,7 +40,7 @@ or
 
 ## Important notes
 
-The PSMSL dataset *.rlrdata is organized as the following, the unit of MSL is mm
+The PSMSL dataset *.rlrdata is organized as the following, the unit of MSL is mm.
 
        1957.7083;  6990; 0;000
        1957.7917;  6975; 0;000
@@ -55,7 +57,7 @@ You may need to install several Python standard modules on your computer if you 
 
      pip install module-name
  
-For installing the LATEST Pyts Module for using the SSA module, carefully read the following website.
+For installing the LATEST pyts module for using the SSA module, carefully read the following website.
 
     https://pyts.readthedocs.io/en/latest/install.html
     
@@ -65,7 +67,7 @@ You should get the LATEST version of pyts by cloning the Github repository:
        cd pyts
        pip install .
        
-### It may take a while installing the Latest SSA on your Windows system
+### It may take a while installing the LATEST pyts on your Windows system
 
 First, install "git" on your Windows computer, https://git-scm.com/downloads
 
@@ -75,7 +77,7 @@ Second, Use the git Bash window, run the following commands:
           cd pyts
           pip install .
           
-If the system report "can not find the module pyts", you may try to do the following in the CMD window:
+If the system report "can not find the module pyts", you may try to do the following in the CMD terminal:
     
           cd pyts   
           py -m pip install .
@@ -84,7 +86,7 @@ If the system report "can not find the module pyts", you may try to do the follo
 
 Rember to "cd" to your working directory that you installed the Python files and TG data.
 
-For running the program: run 
+For running the program:
 
       python Main_cal_TG_Rate_95CI.py
       
@@ -92,14 +94,14 @@ or run
 
       py Main_cal_TG_Rate_95CI.py  
 
-For installing Python modules, if the system still can not find the module after "pip install module-name", you may try:
+If the system still can not find the standard Python module after "pip install module-name", you may try:
        
        py -m pip install module-name 
 
 
 # For NOAA data users
 
-The Main program "Main_cal_TG_Rate_95CI.py" is designed for reading PSMSL data. NOAA data is organized in a slight different way (e.g., 9457292_meantrend.txt):
+The Main program "Main_cal_TG_Rate_95CI.py" is designed for reading PSMSL data. NOAA data is organized in a slight different way (e.g., 9457292_meantrend.txt). The unit of MSL is meters.
    
     Year   Month    Monthly_MSL       
     1949   9        -0.622                                                           
