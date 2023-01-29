@@ -97,7 +97,6 @@ I wrote a Bash script, "do_remove_PSMSL_gap_lines", for doing the pre-process, i
       if [ $IT -le 20 -o $nl -le $npts ]; then
         echo $T
         echo "Deleting empty file $file with time span $T";
-        #SSSS=$(echo $file | awk '{print $1}'| cut -c1-4);
         echo $file
         rm $file
       fi;
