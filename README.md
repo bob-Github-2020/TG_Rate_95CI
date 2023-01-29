@@ -7,44 +7,51 @@ The detailed methodology for calculating the 95%CI is adressed in:
 Wang, G. (2023). A methodoly for calculating the 95% confidence interval of the mean sea-level rate derived from tide gauge data, submitted xxx (02/03/2023)
 
 You may install the module on your computer by: pip install TG_Rate_95CI
+
        # https://pypi.org/project/TG_Rate_95%CI/ 
        
 or download the source code (TG_Rate_95CI.py) to your working directory
+
        # https://github.com/bob-Github-2020/TG_Rate_95CI
 
 ## To Test the module:
 
 Copy Main_cal_TG_Rate_95CI.py, TG_Rate_95CI.py,and the sample PSMSL data (e.g., 828.rlrdata) to your working directory.
 
-type "./Main_cal_TG_Rate_95CI.py"  in a Linux terminal,
+type "./Main_cal_TG_Rate_95CI.py"  in a Linux terminal
+
 or type "python Main_cal_TG_Rate_95CI.py" or "py Main_cal_TG_Rate_95CI.py"  in a Windows CMD terminal. 
 
 ## Important notes
-# The PSMSL dataset ('fin'): *.rlrdata is organized as the following, the unit of MSL is mm
-  # 1957.7083;  6990; 0;000
-  # 1957.7917;  6975; 0;000
-  # 1957.8750;  6926; 0;000
-  # 1957.9583;  6713; 0;000
-  # .......
-  #  1965.0417;  6670; 0;000
-  #  1965.1250;-99999;00;000
-  #  1965.2083;-99999;00;000
-  #  1965.2917;-99999;00;000
-  #  1965.3750;-99999;00;000
+The PSMSL dataset ('fin'): *.rlrdata is organized as the following, the unit of MSL is mm
+  1957.7083;  6990; 0;000
+  
+  1957.7917;  6975; 0;000
 
-## PSMSL fills the data gap as -99999
-  # These gap lines need to be removed before inputting the data into Main_cal_TG_Rate_95CI.py and TG_Rate_95CI.py
-  # I wrote a Bash script, "do_remove_PSMSL_gap_lines", for doing the pre-process.
+  .......
+  
+  1965.1250;-99999;00;000
+  1965.2083;-99999;00;000
+  1965.2917;-99999;00;000
 
-## You may need to install several Python modules (e.g., pandas, statistics) on your computer if you have not installed them before
-    # do this by "pip install module-name"
-    # Those modules are: pandas, numpy, matplitlib, statsmodels, statistics, datetime, and Pyts (the LATEST Pyts)
+PSMSL fills the data gap as -99999. These gap lines need to be removed before inputting the data into Main_cal_TG_Rate_95CI.py and TG_Rate_95CI.py. I wrote a Bash script, "do_remove_PSMSL_gap_lines", for doing the pre-process.
+
+## Required Python Modules
+
+You may need to install several Python modules (e.g., pandas, statistics) on your computer if you have not installed them before. Those modules are: pandas, numpy, matplitlib, statsmodels, statistics, datetime, and Pyts (the LATEST Pyts). Do this by:
+
+    ### pip install module-name"
+ 
+For installing the LATEST Pyts Module for using the SSA module, carefully read the following website.
+
+    ### https://pyts.readthedocs.io/en/latest/install.html
     
-## For installing the LATEST Pyts Module for using the SSA module, carefully read the following website.
-    # https://pyts.readthedocs.io/en/latest/install.html
-    # You can get the LATEST version of pyts by cloning the Github repository:
+You can get the LATEST version of pyts by cloning the Github repository:
+
        git clone https://github.com/johannfaouzi/pyts.git
+       
        cd pyts
+       
        pip install .
   
 ## Some useful hints for Windows-Python users. I know that you use the CMD terminal. 
