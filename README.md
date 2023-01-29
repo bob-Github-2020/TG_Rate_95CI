@@ -49,7 +49,64 @@ The PSMSL dataset *.rlrdata is organized as the following, the unit of MSL is mm
        1965.2083;-99999;00;000
        1965.2917;-99999;00;000
 
-PSMSL fills the data gap as -99999. These gap lines need to be removed before inputting the data into Main_cal_TG_Rate_95CI.py and TG_Rate_95CI.py. Only the first two columns are used. I wrote a Bash script, "do_remove_PSMSL_gap_lines", for doing the pre-process.
+PSMSL fills the data gap as -99999. These gap lines need to be removed before inputting the data into Main_cal_TG_Rate_95CI.py and TG_Rate_95CI.py. Only the first two columns are used. You may use the follwing Bash command to remove gap lines:
+ 
+        sed -e '/-99999/d' -i 828.rlrdata 
+
+I wrote a Bash script, "do_remove_PSMSL_gap_lines", for doing the pre-process, including remove gap lines, exclude datasets shorter than 20 years and with gaps over half of the year range.
+
+   #!/bin/bash
+
+  #12-27-2022, by Bob Wang
+  # Pre-process PEMSL data: (1) remove 99999 (gap lines), (2) remove dataset less than 20 years, or have data gaps over half of the time span. 
+
+for file in *.rlrdata;
+  do
+    echo $file
+    ## Remove "-99999" lines, lines with no measure
+      sed -e '/-99999/d' -i $file 
+   
+    ## Idenfiy stations less than 20 years, gaps > half 
+
+    # total lines, measures
+      lines=$(wc -l < $file);
+      echo 'lines=' $lines
+      
+    # read the firstline-firstrow
+    diff_real () {
+       echo "df=($1 - $2); if (df < 0) { df=df* -1}; print df" | bc -l;
+     }
+
+    y1=$(head -1 $file | cut -d";" -f 1);
+    y2=$(tail -1 $file | cut -d";" -f 1);
+    
+    T=$(diff_real $y2 $y1)
+    
+    echo $y1 $y2 $T
+
+    # conver T to integer
+    IT=${T%.*}
+    npts=$(($IT*12))
+    nl=$((lines*2))
+    echo $IT $npts $nl
+    
+    file_size=$(du -b $file | awk '{print $1}');
+    echo $file_size
+
+    #  remove stations spanning less than 20 years
+    #  or with over half-missing, 2*nlines < T*12
+
+    if [ $IT -le 20 -o $nl -le $npts ]; then
+       echo $T
+       echo "Deleting empty file $file with time span $T";
+       #SSSS=$(echo $file | awk '{print $1}'| cut -c1-4);
+       echo $file
+       rm $file
+    fi;
+    
+    
+done
+
 
 ## Required Python Modules
 
