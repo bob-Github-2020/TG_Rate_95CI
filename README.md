@@ -1,10 +1,9 @@
 # TG_Rate_95CI.py
 
-#! /usr/bin/python3
-# Last updated: 1-27-2023, by Guoquan (Bob) Wang.
+Last updated: 1-27-2023, by Guoquan (Bob) Wang.
 
-## The detailed methodology for calculating the 95%CI is adressed in:
-   # Wang, G. (2023). A methodoly for calculating the 95% confidence interval of the mean sea-level rate derived from tide gauge data, submitted xxx (02/03/2023)
+The detailed methodology for calculating the 95%CI is adressed in:
+Wang, G. (2023). A methodoly for calculating the 95% confidence interval of the mean sea-level rate derived from tide gauge data, submitted xxx (02/03/2023)
 
 ## You may install the module on your computer by: pip install TG_Rate_95CI
        # https://pypi.org/project/TG_Rate_95%CI/ 
