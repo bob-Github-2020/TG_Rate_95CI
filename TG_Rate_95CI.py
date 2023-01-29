@@ -268,7 +268,7 @@ def cal_95CI(year,ts,TG,output,pltshow):
     plt.title('ACF: PSMSL ID '+TG)
                   
     plt.savefig(TG + "_ACF.pdf")
-    #plt.savefig(TG + "_ACF.png")
+    plt.savefig(TG + "_ACF.png")
     if pltshow == 'on':
        plt.show()
       
