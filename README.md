@@ -2,7 +2,7 @@
 
 Last updated: 1-27-2023, by Guoquan (Bob) Wang.
 
-The detailed methodology for calculating the 95%CI is adressed in:
+Calculating the MSL rate and its 95%CI. Please read the main routine "Main_cal_TG_Rate_95CI.py" for using the Python module, "TG_Rate_95CI.py". The detailed methodology for calculating the 95%CI is adressed in:
 
 Wang, G. (2023). A methodoly for calculating the 95% confidence interval of the mean sea-level rate derived from tide gauge data, submitted xxx (02/03/2023)
 
@@ -16,14 +16,15 @@ or download the source code (TG_Rate_95CI.py) to your working directory
 
 ## Test the module
 
-Copy Main_cal_TG_Rate_95CI.py, TG_Rate_95CI.py,and the sample PSMSL data (e.g., 828.rlrdata) to your working directory.
+Copy Main_cal_TG_Rate_95CI.py, TG_Rate_95CI.py, and the sample PSMSL data (e.g., 828.rlrdata) to your working directory.
 
 type "./Main_cal_TG_Rate_95CI.py"  in a Linux terminal
 
 or type "python Main_cal_TG_Rate_95CI.py" or "py Main_cal_TG_Rate_95CI.py"  in a Windows CMD terminal. 
 
 ## Important notes
-The PSMSL dataset ('fin'): *.rlrdata is organized as the following, the unit of MSL is mm
+
+The PSMSL dataset *.rlrdata is organized as the following, the unit of MSL is mm
 
   1957.7083;  6990; 0;000
   
@@ -37,7 +38,7 @@ The PSMSL dataset ('fin'): *.rlrdata is organized as the following, the unit of 
   
   1965.2917;-99999;00;000
 
-PSMSL fills the data gap as -99999. These gap lines need to be removed before inputting the data into Main_cal_TG_Rate_95CI.py and TG_Rate_95CI.py. I wrote a Bash script, "do_remove_PSMSL_gap_lines", for doing the pre-process.
+PSMSL fills the data gap as -99999. These gap lines need to be removed before inputting the data into Main_cal_TG_Rate_95CI.py and TG_Rate_95CI.py.  Only the first two columns are used. I wrote a Bash script, "do_remove_PSMSL_gap_lines", for doing the pre-process.
 
 ## Required Python Modules
 
@@ -52,9 +53,7 @@ For installing the LATEST Pyts Module for using the SSA module, carefully read t
 You can get the LATEST version of pyts by cloning the Github repository:
 
        git clone https://github.com/johannfaouzi/pyts.git
-       
        cd pyts
-       
        pip install .
   
 ## Some useful hints for Windows-Python users. I know that you use the CMD terminal. 
@@ -97,36 +96,34 @@ If you are working on NOAA data, please use the following sentences:
 ##******************For Reading NOAA data***************************************
                                                         
 ## for inputting NOAA data, you may use the following sentences
+     #! /usr/bin/python3
      import os
      import pandas as pd
      from TG_Rate_95CI import cal_95CI
   
      directory = './'
-      for fin in os.listdir(directory):
-         if fin.endswith("meantrend.txt"):
-             print(fin)
-            ns=len(fin)
-            TG = fin[0:7]    # station name, e.g., 8771450
-            ts_noaa = []
-             ts_noaa = pd.read_csv (fin, header=0, delim_whitespace=True)
-             year = ts_noaa.iloc[:,0]    # year
-             mm = ts_noaa.iloc[:,1]
-             msl = ts_noaa.iloc[:,2]     # Monthly_MSL
+       for fin in os.listdir(directory):
+           if fin.endswith("meantrend.txt"):
+              print(fin)
+              ns=len(fin)
+              TG = fin[0:7]    # station name, e.g., 8771450
+              ts_noaa = []
+              ts_noaa = pd.read_csv (fin, header=0, delim_whitespace=True)
+              year = ts_noaa.iloc[:,0]    # year
+              mm = ts_noaa.iloc[:,1]
+              msl = ts_noaa.iloc[:,2]     # Monthly_MSL
             
-             ts = msl*1000              # m to mm
+              ts = msl*1000              # m to mm
 
-             dy = year + (mm-0.5)/12
-             result=cal_95CI(dy, ts, TG, output='on', pltshow='on')
-             b=round(result[0],2)           # Trend
-             b_95CI=round(result[1],2)      # 95%CI
+              dy = year + (mm-0.5)/12
+              result=cal_95CI(dy, ts, TG, output='on', pltshow='on')
+              b=round(result[0],2)           # Trend
+              b_95CI=round(result[1],2)      # 95%CI
  
-             os.remove (fin)     
-          else:
-             pass
-## ********************************End for Reading NOAA data 
-Calculating the MSL rate and its 95%CI
-I wrote this Python module for calculating the mean sea-level (MSL) rate and its uncertainty (95% confidence interval). 
-Please read the main routine "Main_cal_TG_Rate_95CI.py" for using the Python  module, TG_Rate_95CI.py
+              os.remove (fin)     
+            else:
+              pass
+
 
 Some example figures for the Galveston Pleasure Pier TG (PSMSL ID: 828) output from the Python Module:
 
