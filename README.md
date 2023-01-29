@@ -43,11 +43,11 @@ PSMSL fills the data gap as -99999. These gap lines need to be removed before in
 
 You may need to install several Python modules (e.g., pandas, statistics) on your computer if you have not installed them before. Those modules are: pandas, numpy, matplitlib, statsmodels, statistics, datetime, and Pyts (the LATEST Pyts). Do this by:
 
-    ### pip install module-name"
+     pip install module-name
  
 For installing the LATEST Pyts Module for using the SSA module, carefully read the following website.
 
-    ### https://pyts.readthedocs.io/en/latest/install.html
+    https://pyts.readthedocs.io/en/latest/install.html
     
 You can get the LATEST version of pyts by cloning the Github repository:
 
@@ -67,11 +67,17 @@ You can get the LATEST version of pyts by cloning the Github repository:
 ## It may take a while installing the Latest SSA on your Windows system
        First, install "git" on your Windows computer, https://git-scm.com/downloads
        Second, Use the git Bash window, run the following commands:
+       
           git clone https://github.com/johannfaouzi/pyts.git
+          
           cd pyts
+          
           pip install .
+          
     if the system report "can not find the module pyts", you may try to do the following in the CMD window:
+    
           cd pyts   (You need to get into this folder, e.g., c:\users\gwang\pyts)
+          
           py -m pip install .
 
 ## I wish a good luck for Windows users! 
