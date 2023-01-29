@@ -97,13 +97,13 @@ If you are working on NOAA data, please use the following sentences:
 ##******************For Reading NOAA data***************************************
                                                         
 ## for inputting NOAA data, you may use the following sentences
-   import os
-   import pandas as pd
-   from TG_Rate_95CI import cal_95CI
+     import os
+     import pandas as pd
+     from TG_Rate_95CI import cal_95CI
   
-   directory = './'
-   for fin in os.listdir(directory):
-       if fin.endswith("meantrend.txt"):
+     directory = './'
+      for fin in os.listdir(directory):
+         if fin.endswith("meantrend.txt"):
              print(fin)
             ns=len(fin)
             TG = fin[0:7]    # station name, e.g., 8771450
