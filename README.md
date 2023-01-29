@@ -26,17 +26,12 @@ or type "python Main_cal_TG_Rate_95CI.py" or "py Main_cal_TG_Rate_95CI.py"  in a
 
 The PSMSL dataset *.rlrdata is organized as the following, the unit of MSL is mm
 
-  1957.7083;  6990; 0;000
-  
-  1957.7917;  6975; 0;000
-
-  .......
-  
-  1965.1250;-99999;00;000
-  
-  1965.2083;-99999;00;000
-  
-  1965.2917;-99999;00;000
+       1957.7083;  6990; 0;000
+       1957.7917;  6975; 0;000
+       .......
+       1965.1250;-99999;00;000
+       1965.2083;-99999;00;000
+       1965.2917;-99999;00;000
 
 PSMSL fills the data gap as -99999. These gap lines need to be removed before inputting the data into Main_cal_TG_Rate_95CI.py and TG_Rate_95CI.py.  Only the first two columns are used. I wrote a Bash script, "do_remove_PSMSL_gap_lines", for doing the pre-process.
 
@@ -50,7 +45,7 @@ For installing the LATEST Pyts Module for using the SSA module, carefully read t
 
     https://pyts.readthedocs.io/en/latest/install.html
     
-You can get the LATEST version of pyts by cloning the Github repository:
+You should get the LATEST version of pyts by cloning the Github repository:
 
        git clone https://github.com/johannfaouzi/pyts.git
        cd pyts
@@ -64,19 +59,17 @@ You can get the LATEST version of pyts by cloning the Github repository:
        you may try "py -m pip install module-name" 
 
 ## It may take a while installing the Latest SSA on your Windows system
-       First, install "git" on your Windows computer, https://git-scm.com/downloads
-       Second, Use the git Bash window, run the following commands:
+First, install "git" on your Windows computer, https://git-scm.com/downloads
+
+Second, Use the git Bash window, run the following commands:
        
           git clone https://github.com/johannfaouzi/pyts.git
-          
           cd pyts
-          
           pip install .
           
-    if the system report "can not find the module pyts", you may try to do the following in the CMD window:
+if the system report "can not find the module pyts", you may try to do the following in the CMD window:
     
-          cd pyts   (You need to get into this folder, e.g., c:\users\gwang\pyts)
-          
+          cd pyts   
           py -m pip install .
 
 
@@ -122,6 +115,8 @@ If you are working on NOAA data, please use the following Python program:
               pass
 
 ## I wish a good luck for Windows users! 
+
+## Example outputs
 
 Some example figures for the Galveston Pleasure Pier TG (PSMSL ID: 828) output from the Python Module:
 
