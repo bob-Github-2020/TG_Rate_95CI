@@ -1,26 +1,37 @@
-# TG_Rate_95CI.py
+## Rread me for running TG_Rate_95CI.py
 
-Last updated: 1-27-2023, by Guoquan (Bob) Wang.
+Last updated: 1-27-2023, by Guoquan (Bob) Wang.  bob.g.wang@gmail.com
 
-Calculating the MSL rate and its 95%CI. Please read the main routine "Main_cal_TG_Rate_95CI.py" for using the Python module, "TG_Rate_95CI.py". The detailed methodology for calculating the 95%CI is adressed in:
+## Main function
+
+Calculating the MSL rate and its 95% confidence interval. 
+
+Please read the main routine "Main_cal_TG_Rate_95CI.py" for using the Python module "TG_Rate_95CI.py". The detailed methodology for calculating the 95%CI is adressed in:
 
 Wang, G. (2023). A methodoly for calculating the 95% confidence interval of the mean sea-level rate derived from tide gauge data, submitted xxx (02/03/2023)
 
-You may install the module on your computer by: pip install TG_Rate_95CI
+You may install the module on your computer by: 
+
+       pip install TG_Rate_95CI
 
        https://pypi.org/project/TG_Rate_95%CI/ 
        
-or download the source code (TG_Rate_95CI.py) to your working directory
+or download the source code (Main_cal_TG_Rate_95CI.py, TG_Rate_95CI.py) to your working directory
 
        https://github.com/bob-Github-2020/TG_Rate_95CI
 
 ## Test the module
 
-Copy Main_cal_TG_Rate_95CI.py, TG_Rate_95CI.py, and the sample PSMSL data (e.g., 828.rlrdata) to your working directory.
+Copy Main_cal_TG_Rate_95CI.py, TG_Rate_95CI.py, and the sample PSMSL data (e.g., 828.rlrdata) to your working directory. Run the following command in a Linux terminal:
 
-type "./Main_cal_TG_Rate_95CI.py"  in a Linux terminal
+       ./Main_cal_TG_Rate_95CI.py
+       
+or run (in a Windows CMD terminal):
 
-or type "python Main_cal_TG_Rate_95CI.py" or "py Main_cal_TG_Rate_95CI.py"  in a Windows CMD terminal. 
+       python Main_cal_TG_Rate_95CI.py
+       
+or 
+       py Main_cal_TG_Rate_95CI.py
 
 ## Important notes
 
