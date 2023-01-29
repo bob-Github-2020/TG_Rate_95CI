@@ -1,6 +1,6 @@
-## Rread me for running TG_Rate_95CI.py
+## Rread Me for running TG_Rate_95CI.py
 
-Last updated: 1-27-2023, by Guoquan (Bob) Wang.  bob.g.wang@gmail.com
+Last updated: 1-28-2023, by Guoquan (Bob) Wang.  bob.g.wang@gmail.com
 
 ## Main function
 
@@ -14,7 +14,9 @@ You may install the module on your computer by:
 
        pip install TG_Rate_95CI
 
-       https://pypi.org/project/TG_Rate_95%CI/ 
+Please read
+
+      https://pypi.org/project/TG_Rate_95%CI
        
 or download the source code (Main_cal_TG_Rate_95CI.py, TG_Rate_95CI.py) to your working directory
 
@@ -31,6 +33,7 @@ or run (in a Windows CMD terminal):
        python Main_cal_TG_Rate_95CI.py
        
 or 
+
        py Main_cal_TG_Rate_95CI.py
 
 ## Important notes
@@ -44,11 +47,11 @@ The PSMSL dataset *.rlrdata is organized as the following, the unit of MSL is mm
        1965.2083;-99999;00;000
        1965.2917;-99999;00;000
 
-PSMSL fills the data gap as -99999. These gap lines need to be removed before inputting the data into Main_cal_TG_Rate_95CI.py and TG_Rate_95CI.py.  Only the first two columns are used. I wrote a Bash script, "do_remove_PSMSL_gap_lines", for doing the pre-process.
+PSMSL fills the data gap as -99999. These gap lines need to be removed before inputting the data into Main_cal_TG_Rate_95CI.py and TG_Rate_95CI.py. Only the first two columns are used. I wrote a Bash script, "do_remove_PSMSL_gap_lines", for doing the pre-process.
 
 ## Required Python Modules
 
-You may need to install several Python modules (e.g., pandas, statistics) on your computer if you have not installed them before. Those modules are: pandas, numpy, matplitlib, statsmodels, statistics, datetime, and Pyts (the LATEST Pyts). Do this by:
+You may need to install several Python standard modules on your computer if you have not installed them before. Those modules are: pandas, numpy, matplitlib, statsmodels, statistics, datetime, and Pyts (the LATEST Pyts). Do this by:
 
      pip install module-name
  
@@ -81,11 +84,11 @@ If the system report "can not find the module pyts", you may try to do the follo
 
 Rember to "cd" to your working directory that you installed the Python files and TG data.
 
-For running the program: type 
+For running the program: run 
 
       python Main_cal_TG_Rate_95CI.py
       
-or type
+or run
 
       py Main_cal_TG_Rate_95CI.py  
 
