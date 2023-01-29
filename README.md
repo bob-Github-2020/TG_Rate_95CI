@@ -50,15 +50,9 @@ You should get the LATEST version of pyts by cloning the Github repository:
        git clone https://github.com/johannfaouzi/pyts.git
        cd pyts
        pip install .
-  
-## Some useful hints for Windows-Python users. I know that you use the CMD terminal. 
-   Rember to "cd" to your working directory that you installed the Python files and TG data
-   For running the program: type "python Main_cal_TG_Rate_95CI.py" or "py Main_cal_TG_Rate_95CI.py"  
+       
+### It may take a while installing the Latest SSA on your Windows system
 
-   For installing Python modules: If the system still can not find the module after  "pip install module-name",
-       you may try "py -m pip install module-name" 
-
-## It may take a while installing the Latest SSA on your Windows system
 First, install "git" on your Windows computer, https://git-scm.com/downloads
 
 Second, Use the git Bash window, run the following commands:
@@ -67,10 +61,24 @@ Second, Use the git Bash window, run the following commands:
           cd pyts
           pip install .
           
-if the system report "can not find the module pyts", you may try to do the following in the CMD window:
+If the system report "can not find the module pyts", you may try to do the following in the CMD window:
     
           cd pyts   
           py -m pip install .
+  
+## Some useful hints for Windows-Python users
+
+I know that you use the CMD terminal. Rember to "cd" to your working directory that you installed the Python files and TG data
+For running the program: type 
+      python Main_cal_TG_Rate_95CI.py
+      
+or type
+      py Main_cal_TG_Rate_95CI.py  
+
+For installing Python modules, if the system still can not find the module after  "pip install module-name",
+       you may try 
+       
+       py -m pip install module-name 
 
 
 # For NOAA data users
