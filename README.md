@@ -68,15 +68,17 @@ If the system report "can not find the module pyts", you may try to do the follo
   
 ## Some useful hints for Windows-Python users
 
-I know that you use the CMD terminal. Rember to "cd" to your working directory that you installed the Python files and TG data
+Rember to "cd" to your working directory that you installed the Python files and TG data.
+
 For running the program: type 
+
       python Main_cal_TG_Rate_95CI.py
       
 or type
+
       py Main_cal_TG_Rate_95CI.py  
 
-For installing Python modules, if the system still can not find the module after  "pip install module-name",
-       you may try 
+For installing Python modules, if the system still can not find the module after "pip install module-name", you may try:
        
        py -m pip install module-name 
 
