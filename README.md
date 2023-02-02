@@ -24,6 +24,38 @@ or download the source code (Main_cal_TG_Rate_95CI.py, TG_Rate_95CI.py) to your 
 
        https://github.com/bob-Github-2020/TG_Rate_95CI
 
+## Required Python Modules
+
+You may need to install several Python standard modules on your computer if you have not installed them before. Those modules are: pandas, numpy, matplotlib, statsmodels, math, statistics, datetime, and pyts (Must be the LATEST pyts). Do this by:
+
+     pip install module-name
+ 
+For installing the LATEST pyts module for using the SSA module, please carefully read the following website.
+
+    https://pyts.readthedocs.io/en/latest/install.html
+    
+You should get the LATEST version of pyts by cloning the Github repository:
+
+       git clone https://github.com/johannfaouzi/pyts.git
+       cd pyts
+       pip install .
+       
+### It may take a while installing the LATEST pyts on your Windows system
+
+First, install "git" on your Windows computer, https://git-scm.com/downloads
+
+Second, Use the git Bash window, run the following commands:
+       
+          git clone https://github.com/johannfaouzi/pyts.git
+          cd pyts
+          pip install .
+          
+If the system report "can not find the module pyts", you may try to do the following in the CMD terminal:
+    
+          cd pyts   
+          py -m pip install .
+  
+
 ## Test the module
 
 Copy Main_cal_TG_Rate_95CI.py, TG_Rate_95CI.py, and the sample PSMSL data (e.g., 828.rlrdata) to your working directory. Run the following command in a Linux terminal:
@@ -33,11 +65,7 @@ Copy Main_cal_TG_Rate_95CI.py, TG_Rate_95CI.py, and the sample PSMSL data (e.g.,
 or run (in a Windows CMD terminal):
 
        python Main_cal_TG_Rate_95CI.py
-       
-or 
-
-       python3 Main_cal_TG_Rate_95CI.py
-       
+            
 or    
 
        py Main_cal_TG_Rate_95CI.py
@@ -106,37 +134,6 @@ I wrote a Bash script, "do_PSMSL_Pre_Process.sh", for doing the pre-process, rem
      done
 
 
-## Required Python Modules
-
-You may need to install several Python standard modules on your computer if you have not installed them before. Those modules are: pandas, numpy, matplitlib, statsmodels, statistics, datetime, and Pyts (Must be the LATEST Pyts). Do this by:
-
-     pip install module-name
- 
-For installing the LATEST pyts module for using the SSA module, please carefully read the following website.
-
-    https://pyts.readthedocs.io/en/latest/install.html
-    
-You should get the LATEST version of pyts by cloning the Github repository:
-
-       git clone https://github.com/johannfaouzi/pyts.git
-       cd pyts
-       pip install .
-       
-### It may take a while installing the LATEST pyts on your Windows system
-
-First, install "git" on your Windows computer, https://git-scm.com/downloads
-
-Second, Use the git Bash window, run the following commands:
-       
-          git clone https://github.com/johannfaouzi/pyts.git
-          cd pyts
-          pip install .
-          
-If the system report "can not find the module pyts", you may try to do the following in the CMD terminal:
-    
-          cd pyts   
-          py -m pip install .
-  
 ## Some useful hints for Windows-Python users
 
 Rember to "cd" to your working directory that you installed the Python files and TG data.
