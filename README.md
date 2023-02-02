@@ -8,9 +8,9 @@ Feel free to contact me by: bob.g.wang@gmail.com
 
 Calculating the MSL rate and its 95% confidence interval. 
 
-Please read the main routine "Main_cal_TG_Rate_95CI.py" for using the Python module "TG_Rate_95CI.py". The detailed methodology for calculating the 95%CI is adressed in:
+Please read the main routine "Main_cal_TG_Rate_95CI.py" for calling the Python module "TG_Rate_95CI.py". The detailed methodology for calculating the 95%CI is adressed in:
 
-Wang, G. (2023). A methodoly for calculating the 95% confidence interval of the mean sea-level rate derived from tide gauge data, submitted xxx (02/03/2023)
+Wang, G. (2023). A methodoly for calculating the 95% confidence interval of the mean sea-level rate derived from tide gauge data, submitted xxx (02/01/2023)
 
 You may install the module on your computer by: 
 
@@ -35,10 +35,12 @@ or run (in a Windows CMD terminal):
        python Main_cal_TG_Rate_95CI.py
        
 or 
-
+       python3 Main_cal_TG_Rate_95CI.py
+       
+or     
        py Main_cal_TG_Rate_95CI.py
 
-## Important notes
+## Important notices
 
 The PSMSL dataset *.rlrdata is organized as the following, the unit of MSL is mm.
 
@@ -104,7 +106,7 @@ I wrote a Bash script, "do_PSMSL_Pre_Process.sh", for doing the pre-process, rem
 
 ## Required Python Modules
 
-You may need to install several Python standard modules on your computer if you have not installed them before. Those modules are: pandas, numpy, matplitlib, statsmodels, statistics, datetime, and Pyts (the LATEST Pyts). Do this by:
+You may need to install several Python standard modules on your computer if you have not installed them before. Those modules are: pandas, numpy, matplitlib, statsmodels, statistics, datetime, and Pyts (Must be the LATEST Pyts). Do this by:
 
      pip install module-name
  
@@ -181,13 +183,14 @@ If you are working on NOAA data, please use the following Python program for cal
               msl = ts_noaa.iloc[:,2]     # Monthly_MSL
             
               ts = msl*1000              # m to mm
-
               dy = year + (mm-0.5)/12
+              
+              # For processing a bunch datasets, may set pltshow='off'
               result=cal_95CI(dy, ts, TG, output='on', pltshow='on')
               b=round(result[0],2)           # Trend
               b_95CI=round(result[1],2)      # 95%CI
  
-              os.remove (fin)     
+              #os.remove (fin)     
             else:
               pass
 
