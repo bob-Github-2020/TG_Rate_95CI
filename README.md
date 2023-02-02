@@ -14,11 +14,11 @@ Wang, G. (2023). A methodoly for calculating the 95% confidence interval of the 
 
 You may install the module on your computer by: 
 
-       pip install TG_Rate_95CI
+       pip install TG-Rate-95CI
 
 Please visit the PyPi site:
 
-      https://pypi.org/project/TG_Rate_95%CI
+      https://pypi.org/project/TG-Rate-95CI
        
 or download the source code (Main_cal_TG_Rate_95CI.py, TG_Rate_95CI.py) to your working directory
 
