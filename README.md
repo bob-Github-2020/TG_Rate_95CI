@@ -1,4 +1,4 @@
-## Rread Me for running TG_Rate_95CI.py
+## Rread Me for calling TG_Rate_95CI.py
 
 Last updated: 1-28-2023, by Guoquan (Bob) Wang.  
 
