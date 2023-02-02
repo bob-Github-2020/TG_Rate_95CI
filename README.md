@@ -35,9 +35,11 @@ or run (in a Windows CMD terminal):
        python Main_cal_TG_Rate_95CI.py
        
 or 
+
        python3 Main_cal_TG_Rate_95CI.py
        
-or     
+or    
+
        py Main_cal_TG_Rate_95CI.py
 
 ## Important notices
