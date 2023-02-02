@@ -196,7 +196,7 @@ If you are working on NOAA data, please use the following Python program for cal
             else:
               pass
 
-## I wish a good luck for Windows users! 
+## I wish a good luck for Windows-Python users! 
 
 ## Example outputs
 
