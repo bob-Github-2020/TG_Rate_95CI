@@ -15,7 +15,7 @@ Calculating the MSL rate and its 95% confidence interval.
 
 Please read the main routine "Main_cal_TG_Rate_95CI.py" for calling the Python module "TG_Rate_95CI.py". The detailed methodology for calculating the 95%CI is adressed in:
 
-Wang, G. (2023). A methodoly for calculating the 95% confidence interval of the mean sea-level rate derived from tide gauge data, submitted xxx (02/01/2023)
+Guoquan Wang, The 95 per cent confidence interval for the mean sea-level change rate derived from tide gauge data, Geophysical Journal International, Volume 235, Issue 2, November 2023, Pages 1420–1433, https://doi.org/10.1093/gji/ggad311   (It is named as 2023_Wang_95CITD_GJI.pdf in the main folder.)
 
 You may install the module on your computer by: 
 
