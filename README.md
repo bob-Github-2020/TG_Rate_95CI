@@ -2,6 +2,8 @@ Original Publication:
 
 Guoquan Wang, The 95 per cent confidence interval for the mean sea-level change rate derived from tide gauge data, Geophysical Journal International, Volume 235, Issue 2, November 2023, Pages 1420–1433, https://doi.org/10.1093/gji/ggad311
 
+[2023_Wang_95CITD_GJI.pdf](https://github.com/bob-Github-2020/TG_Rate_95CI/files/12371472/2023_Wang_95CITD_GJI.pdf)
+
 
 ## Rread Me for calling TG_Rate_95CI.py
 
